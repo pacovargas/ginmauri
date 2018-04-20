@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>GinMauri</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Francisco Javier Vargas Estrada">
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+
+    <link rel="stylesheet" href="bootstrap-4.1.0-dist/css/bootstrap.min.css">
+    <script src="bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
+
+    <script src="js/ginmauri.js"></script>
+    <link rel="stylesheet" href="css/ginmauri.css">
+</head>
+
+<body>
+	<div class="container-fluid cabecera">
+		<div class="row">
+			<div class="col-sm-12 text-center">GIN MAURI V2.0</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row formulario-principal">
+			<input type="hidden" value="0" id="id_paciente" />
+			<input type="hidden" value="0" id="indice_paciente" />
+			<div class="col-sm-6 formulario-principal-izquierda">
+				<div class="row grupo-formulario">
+					<div class="col-sm-2 text-right">
+						<label for="apellidos">Apellidos</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="text" name="apellidos" id="apellidos" tabindex="1" />
+					</div>
+				</div>
+				<div class="row grupo-formulario">
+					<div class="col-sm-2 text-right">
+						<label for="numero-historia">Nº Historia</label>
+					</div>
+					<div class="col-sm-4">
+						<input type="text" name="numero-historia" id="numero-historia" tabindex="3" />
+					</div>
+					<div class="col-sm-2 text-right">
+						<label for="fecha">Fecha</label>
+					</div>
+					<div class="col-sm-4">
+						<input type="text" name="fecha" id="fecha" tabindex="4" />
+					</div>
+				</div>
+				<div class="row grupo-formulario">
+					<div class="col-sm-2 text-right">
+						<label for="edad">Edad</label>
+					</div>
+					<div class="col-sm-4">
+						<input type="text" name="edad" id="edad" tabindex="6" />
+					</div>
+					<div class="col-sm-2 text-right">
+						<label for="estado-civil">Estado Civil</label>
+					</div>
+					<div class="col-sm-4">
+						<input type="text" name="estado-civil" id="estado-civil" tabindex="7" />
+					</div>
+				</div>
+				<div class="row grupo-formulario">
+					<div class="col-sm-2 text-right">
+						<label for="direccion">Dirección</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="text" name="direccion" id="direccion" tabindex="9" />
+					</div>
+				</div>
+				<div class="row grupo-formulario">
+					<div class="col-sm-2 text-right">
+						<label for="telefono">Teléfono</label>
+					</div>
+					<div class="col-sm-4">
+						<input type="text" name="telefono" id="telefono" tabindex="11" />
+					</div>
+					<div class="col-sm-2 text-right">
+						<label for="nif">NIF</label>
+					</div>
+					<div class="col-sm-4">
+						<input type="text" name="nif" id="nif" tabindex="12" />
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="row grupo-formulario">
+					<div class="col-sm-2 text-right">
+						<label for="nombre">Nombre</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="text" name="nombre" id="nombre" tabindex="2" />
+					</div>
+				</div>
+				<div class="row grupo-formulario">
+					<div class="col-sm-3 text-right">
+						<label for="tipo-enferma">Tipo de enferma</label>
+					</div>
+					<div class="col-sm-9">
+						<input type="text" name="tipo-enferma" id="tipo-enferma" tabindex="5" />
+					</div>
+				</div>
+				<div class="row grupo-formulario">
+					<div class="col-sm-2 text-right">
+						<label for="ocupacion">Ocupación</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="text" name="ocupacion" id="ocupacion" tabindex="8" />
+					</div>
+				</div>
+				<div class="row grupo-formulario">
+					<div class="col-sm-2 text-right">
+						<label for="ciudad">Ciudad</label>
+					</div>
+					<div class="col-sm-10">
+						<input type="text" name="ciudad" id="ciudad" tabindex="10" />
+					</div>
+				</div>
+				<div class="row grupo-formulario">
+					<div class="col-sm-2 text-right">
+						<label for="grupo-rh">Grupo Rh</label>
+					</div>
+					<div class="col-sm-4">
+						<input type="text" name="grupo-rh" id="grupo-rh" tabindex="13" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row pestanas">
+			<div class="col-sm-3 pestana text-center activo" data-panel="menu">Menú</div>
+			<div class="col-sm-3 pestana text-center" data-panel="antecedentes">Antecedentes Familiares y Personales</div>
+			<div class="col-sm-3 pestana text-center" data-panel="antecedentes-ginecologicos">Antecedentes Ginecológicos</div>
+			<div class="col-sm-3 pestana text-center" data-panel="historia">Historia Clínica Actual</div>
+		</div>
+
+		<div class="row panel" id="menu">
+			<div class="col-sm-4 grupo-botones text-center">
+				<div class="boton">
+					<button id="primero">|<</button>
+					<button id="anterior"><</button>
+					<button id="buscar">Buscar</button>
+					<button id="siguiente">></button>
+					<button id="ultimo">>|</button>
+				</div>
+				<div class="boton">
+					<button id="utilidades">Utilidades</button>	
+				</div>
+				<div class="boton">
+					<button id="ordenar">Ordenar</button>	
+				</div>
+			</div>
+			<div class="col-sm-4 grupo-botones text-center">
+				<div class="boton">
+					<button id="lista">Ver Lista</button>	
+				</div>
+				<div class="boton">
+					<button id="nuevo">Nuevo</button>	
+				</div>
+			</div>
+			<div class="col-sm-4 grupo-botones text-center">
+				<div class="boton">
+					<button id="eliminar">Eliminar</button>	
+				</div>
+				<div class="boton">
+					<button id="acerca">Acerca de...</button>	
+				</div>
+			</div>
+		</div>
+
+		<div class="row panel oculto" id="antecedentes">
+			<div class="col-sm-12"><label for='antecedentes-familiares'>Antecedentes Familiares</label></div>
+			<div class="col-sm-12"><textarea id="antecedentes-familiares"></textarea></div>
+			<div class="col-sm-12"><label for='antecedentes-personales'>Antecedentes Personales</label></div>
+			<div class="col-sm-12"><textarea id="antecedentes-personales"></textarea></div>
+		</div>
+
+		<div class="row panel oculto" id="antecedentes-ginecologicos">
+			<div class="col-sm-4">
+				<label for="menarquia">Menarquía: </label><input type="text" name="menarquia" id="menarquia" />
+			</div>
+			<div class="col-sm-4">
+				<label for="tm">T/M: </label><input type="text" name="tm" id="tm" />
+			</div>
+			<div class="col-sm-4">
+				<label for="fur">FUR: </label><input type="text" name="fur" id="fur" />
+			</div>
+			<div class="col-sm-6">
+				<label for="cantidad">Cantidad: </label>
+				<select name="cantidad" id="cantidad">
+					<option value=""></option>
+					<option value="Normal">Normal</option>
+					<option value="Hipermenorrea">Hipermenorrea</option>
+					<option value="Hipomenorrea">Hipomenorrea</option>
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<label for="dolor">Dolor: </label>
+				<select name="dolor" id="dolor">
+					<option value=""></option>
+					<option value="Premenstrual">Premenstrual</option>
+					<option value="Instramenstrual">Instramenstrual</option>
+					<option value="Postmenstrual">Postmenstrual</option>
+				</select>
+			</div>
+			<div class="col-sm-8">
+				<label for="edad-sexual">Edad primeras relaciones sexuales</label><input type="text" name="edad-sexual" id="edad-sexual" />
+			</div>
+			<div class="col-sm-4">
+				<label for="dispareunia">Dispareunia: </label>
+				<select name="dispareunia" id="dispareunia">
+					<option value=""></option>
+					<option value="Si">Si</option>
+					<option value="No">No</option>
+				</select>
+			</div>
+			<div class="col-sm-4">
+				<label for="coitorragias">Coitorragias: </label>
+				<select name="coitorragias" id="coitorragias">
+					<option value=""></option>
+					<option value="Si">Si</option>
+					<option value="No">No</option>
+				</select>
+			</div>
+			<div class="col-sm-8">
+				<label for="anticonceptivos">Anticonceptivos: </label>
+				<select name="anticonceptivos" id="anticonceptivos">
+					<option value=""></option>
+					<option value="Ninguno">Ninguno</option>
+					<option value="Coito Interruptus">Coito Interruptus</option>
+					<option value="Preservativo">Preservativo</option>
+					<option value="Espermicida">Espermicida</option>
+					<option value="DIU">DIU</option>
+					<option value="ACH">ACH</option>
+					<option value="BTB">BTB</option>
+					<option value="Vasectomía">Vasectomía</option>
+				</select>
+			</div>
+			<div class="col-sm-11 offset-sm-1 embarazos">
+				<div class="row">
+					<div class="col-sm-2 titulo-embarazo text-center">Año</div>
+					<div class="col-sm-2 titulo-embarazo text-center">Embarazo</div>
+					<div class="col-sm-2 titulo-embarazo text-center">Parto</div>
+					<div class="col-sm-2 titulo-embarazo text-center">Peso</div>
+					<div class="col-sm-2 titulo-embarazo text-center">Sexo</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-2"><input type="text" name="ano1" id="ano1" /></div>
+					<div class="col-sm-2"><input type="text" name="embarazo1" id="embarazo1" /></div>
+					<div class="col-sm-2">
+						<select name="parto1" id="parto1">
+							<option value=""></option>
+							<option value="Eutópico">Eutópico</option>
+							<option value="Ventosas">Ventosas</option>
+							<option value="Forceps">Forceps</option>
+							<option value="Cesárea">Cesárea</option>
+						</select>
+					</div>
+					<div class="col-sm-2"><input type="text" name="peso1" id="peso1" /></div>
+					<div class="col-sm-2">
+						<select name="sexo1" id="sexo1">
+							<option value=""></option>
+							<option value="V">V</option>
+							<option value="H">H</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-2"><input type="text" name="ano2" id="ano2" /></div>
+					<div class="col-sm-2"><input type="text" name="embarazo2" id="embarazo2" /></div>
+					<div class="col-sm-2">
+						<select name="parto2" id="parto2">
+							<option value=""></option>
+							<option value="Eutópico">Eutópico</option>
+							<option value="Ventosas">Ventosas</option>
+							<option value="Forceps">Forceps</option>
+							<option value="Cesárea">Cesárea</option>
+						</select>
+					</div>
+					<div class="col-sm-2"><input type="text" name="peso2" id="peso2" /></div>
+					<div class="col-sm-2">
+						<select name="sexo2" id="sexo2">
+							<option value=""></option>
+							<option value="V">V</option>
+							<option value="H">H</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-2"><input type="text" name="ano3" id="ano3" /></div>
+					<div class="col-sm-2"><input type="text" name="embarazo3" id="embarazo3" /></div>
+					<div class="col-sm-2">
+						<select name="parto3" id="parto3">
+							<option value=""></option>
+							<option value="Eutópico">Eutópico</option>
+							<option value="Ventosas">Ventosas</option>
+							<option value="Forceps">Forceps</option>
+							<option value="Cesárea">Cesárea</option>
+						</select>
+					</div>
+					<div class="col-sm-2"><input type="text" name="peso3" id="peso3" /></div>
+					<div class="col-sm-2">
+						<select name="sexo3" id="sexo3">
+							<option value=""></option>
+							<option value="V">V</option>
+							<option value="H">H</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-2"><input type="text" name="ano4" id="ano4" /></div>
+					<div class="col-sm-2"><input type="text" name="embarazo4" id="embarazo4" /></div>
+					<div class="col-sm-2">
+						<select name="parto4" id="parto4">
+							<option value=""></option>
+							<option value="Eutópico">Eutópico</option>
+							<option value="Ventosas">Ventosas</option>
+							<option value="Forceps">Forceps</option>
+							<option value="Cesárea">Cesárea</option>
+						</select>
+					</div>
+					<div class="col-sm-2"><input type="text" name="peso4" id="peso4" /></div>
+					<div class="col-sm-2">
+						<select name="sexo4" id="sexo4">
+							<option value=""></option>
+							<option value="V">V</option>
+							<option value="H">H</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-2"><input type="text" name="ano5" id="ano5" /></div>
+					<div class="col-sm-2"><input type="text" name="embarazo5" id="embarazo5" /></div>
+					<div class="col-sm-2">
+						<select name="parto5" id="parto5">
+							<option value=""></option>
+							<option value="Eutópico">Eutópico</option>
+							<option value="Ventosas">Ventosas</option>
+							<option value="Forceps">Forceps</option>
+							<option value="Cesárea">Cesárea</option>
+						</select>
+					</div>
+					<div class="col-sm-2"><input type="text" name="peso5" id="peso5" /></div>
+					<div class="col-sm-2">
+						<select name="sexo5" id="sexo5">
+							<option value=""></option>
+							<option value="V">V</option>
+							<option value="H">H</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-2"><input type="text" name="ano6" id="ano6" /></div>
+					<div class="col-sm-2"><input type="text" name="embarazo6" id="embarazo6" /></div>
+					<div class="col-sm-2">
+						<select name="parto6" id="parto6">
+							<option value=""></option>
+							<option value="Eutópico">Eutópico</option>
+							<option value="Ventosas">Ventosas</option>
+							<option value="Forceps">Forceps</option>
+							<option value="Cesárea">Cesárea</option>
+						</select>
+					</div>
+					<div class="col-sm-2"><input type="text" name="peso6" id="peso6" /></div>
+					<div class="col-sm-2">
+						<select name="sexo6" id="sexo6">
+							<option value=""></option>
+							<option value="V">V</option>
+							<option value="H">H</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row panel oculto" id="historia">
+			<div class="col-sm-12"><textarea id="historia-clinica"></textarea></div>
+		</div>
+	</div>
+
+	<div class="ventana-modal" id="ventana-lista">
+		<div class="cuerpo-modal container">
+			<div class="row">
+				<div class="col-sm-12 titulo-modal">
+					<p class="text-center">Lista de Pacientes</p>
+				</div>
+				<div class="col-sm-8 offset-sm-2">
+					<p class="aviso text-center">Para seleccionar haga doble click sobre los apellidos</p>
+					<p class="azul text-center">Número de Pacientes: <span id="num-pacientes"></span></p>
+					<input type="text" name="buscador-lista" id="buscador-lista" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-8 offset-sm-2">
+					<select size="14" id="selector-lista-pacientes"></select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<button class="cerrar-modal">Salir Ver Lista</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="ventana-modal" id="ventana-utilidades">
+		<div class="cuerpo-modal container">
+			<div class="row text-center">
+				<div class="col-sm-12 titulo-modal">
+					<p class="text-center">Utilidades</p>
+				</div>
+				<div class="col-sm-8 offset-sm-2">
+					<div class="boton">
+						<button id="backup">Copia de Seguridad</button>	
+					</div>
+					<div class="boton">
+						<button id="restaurar">Restaurar Copia de Seguridad</button>	
+					</div>
+				</div>
+				<div class="col-sm-4 offset-sm-8">
+					<div class="boton">
+						<button class="cerrar-modal">Salir</button>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

@@ -1,0 +1,182 @@
+body{
+    font-size: 14px;
+    background-color: #ffffc0;
+}
+
+.pestana,
+.panel,
+button{
+    background-color: #ece9d8;
+}
+
+input{
+    max-width: 100%;
+    width: 100%;
+}
+
+.grupo-formulario{
+    margin-bottom: 14px;
+}
+
+.formulario-principal .text-right{
+    padding-right: 0;
+}
+
+.formulario-principal label{
+    vertical-align: sub;
+}
+
+
+.pestana{
+    cursor: pointer;
+    border: 1px solid black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
+}
+
+.pestanas{
+    margin-top: 10px;
+}
+
+.pestana.activo{
+    border-bottom: none;
+    font-weight: bold;
+}
+
+.oculto{
+    display: none;
+}
+
+.panel{
+    border: 1px solid black;
+    border-top: none;
+    padding-top: 20px;
+}
+
+.boton{
+    margin-bottom: 20px;
+}
+
+.grupo-botones button{
+    width: 60%;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+#buscar{
+    width: 24%;
+}
+
+#primero, #anterior, #siguiente, #ultimo{
+    width: 8%;
+}
+
+#antecedentes label{
+    color: red;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#antecedentes textarea,
+#historia textarea{
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+#historia textarea{
+    height: 200px;
+}
+
+#antecedentes-ginecologicos input{
+    width: auto;
+}
+
+#antecedentes-ginecologicos > div{
+    margin-bottom: 15px;
+}
+
+.titulo-embarazo{
+    color: red;
+    font-weight: bold;
+}
+
+.embarazos input,
+.embarazos select{
+    width: 100%;
+}
+
+#ventana-lista select{
+    width: 100%;
+}
+
+.ventana-modal{
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    display: none;
+}
+
+.cuerpo-modal{
+    background: #c0ffc0;
+}
+
+.titulo-modal{
+    color: blue;
+    font-size: 16px;
+    border-bottom: 1px solid blue;
+    margin-bottom: 20px;
+}
+
+.titulo-modal p{
+    margin-bottom: 0;
+}
+
+.aviso{
+    font-weight: bold;
+    background-color: #ffff00;
+    border: 1px solid black;
+}
+
+.azul{
+    color: blue;    
+}
+
+.cerrar-modal{
+    margin: 25px 0;
+    padding: 5px 25px;
+}
+
+#num-pacientes{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.cabecera{
+    background-color: #3890fd;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 25px;
+    padding: 5px 0;
+}
+
+#ventana-utilidades .titulo-modal{
+    color: black;
+    border-color: black;
+    margin-bottom: 50px;
+}
+
+#ventana-utilidades .cuerpo-modal{
+    background-color: #ffc0c0;
+}
+
+#ventana-utilidades button{
+    width: 50%;
+    height: 45px;
+    margin-bottom: 20px;
+}
