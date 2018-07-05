@@ -442,6 +442,10 @@ function ordenar(){
 	primero();
 }
 
+function backup(){
+	window.open('controllers/backup.php', '_blank');
+}
+
 $(function(){
 	$(".pestana").click(function(event) {
 		showPanel($(this).data("panel"), $(this));
@@ -501,6 +505,10 @@ $(function(){
 
 	$("#utilidades").click(function(event) {
 		mostrarModal("#ventana-utilidades");
+	});
+
+	$("#backup").click(function(event) {
+		backup();
 	});
 
 	indices = getIndices();

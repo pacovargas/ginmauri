@@ -306,4 +306,48 @@ class Paciente{
 			);
 		}	
 	}
+
+	// public static function backup(){
+	// 	// $db = new DataBase();
+	// 	// $query = "select * from pacientes";
+	// 	// $res = $db->query($query);
+	// 	// $csv = array();
+	// 	// $csv = array();
+	// 	// header('Content-Type: application/octet-stream');
+	// 	// header("Content-Transfer-Encoding: Binary"); 
+	// 	// header("Content-disposition: attachment; filename=\"my_csv_file.csv\""); 
+	// 	// $cont = 0;
+	// 	// foreach ($res as $row){
+	// 	// 	foreach ($row as $value){
+	// 	// 		$csv[$cont][] = $value;
+	// 	// 	}
+	// 	// 	$cont++;
+	// 	// }
+	// 	// $outputBuffer = fopen("php://output", 'w');
+	// 	// foreach($csv as $val) {
+	// 	// 	fputcsv($outputBuffer, $val, ";", '"');
+	// 	// }
+	// 	// fclose($outputBuffer);
+	// 	// exit;
+		
+	// 	// echo "<pre>CSV</pre>";
+	// 	// echo "<pre>";
+	// 	// print_r($csv);
+	// 	// echo "</pre>";
+
+	// 	$dbhost = 'example.org';
+	// 	$dbname = 'nombre-base-datos';
+	// 	$dbuser = 'usuario-base-datos';
+	// 	$dbpass = 'contraseña-base-datos';
+		 
+	// 	$backup_file = $dbname . date("Y-m-d-H-i-s") . '.gz';
+		 
+	// 	// comandos a ejecutar
+	// 	$command = "mysqldump --opt -h $dbhost -u $dbuser -p$dbpass $dbname | gzip > $backup_file";
+		 
+	// 	// ejecución y salida de éxito o errores
+	// 	system($command,$output);
+	// 	echo $output;
+
+	// }
 }
