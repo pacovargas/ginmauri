@@ -511,6 +511,10 @@ $(function(){
 		backup();
 	});
 
+	$("#restaurar").click(function(event) {
+		window.location = "restore.php";
+	});
+
 	indices = getIndices();
 	primero();
 	iniciaLista();
