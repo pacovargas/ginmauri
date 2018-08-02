@@ -331,7 +331,7 @@ function buscadorLista(){
 function guardarPaciente(){
 	$.ajax({
 		url: 'controllers/savePaciente.php',
-		type: 'GET',
+		type: 'POST',
 		dataType: 'json',
 		data: {
 			id: $("#id_paciente").val(),
